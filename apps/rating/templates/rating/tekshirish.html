@@ -1,0 +1,28 @@
+{% extends 'rating/base.html' %}
+
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="caed card-title">
+                <h3></h3>
+            </div>
+            <div class="card card-body">
+
+                <ul>
+                    {% for key, value in list.items %}
+                    <li>{{key}} - {{value}}</li>
+                    {% endfor %}
+                </ul>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,32 @@
+{% extends 'rating/base.html' %}
+{% load static %}
+{% block content %}
+<div class="card card-body">
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-4">
+            <div class="card-group">
+
+
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'media/rasm.jpg' %}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.name }}</h5>
+                        <p class="card-text">{{ category.name }} fanidan test yechish</p>
+                        <a href="{% url 'fan' category.id %}" class="btn btn-primary">Test topshirish</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+
+        </div>
+        {% endfor %}
+        <br>
+    </div>
+</div>
+{% endblock content %}
+
