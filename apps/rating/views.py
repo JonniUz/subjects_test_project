@@ -49,7 +49,8 @@ def tekshirish(request, id):
         return render(request, 'rating/tekshirish.html', {'correct_answer_count': correct_answer_count,
                                                           'respon': respon,
                                                           'len_questions': len_questions,
-                                                          'len_javoblar': len_javoblar})
+                                                          'len_javoblar': len_javoblar,
+                                                          'category': fan})
     return render(request, 'rating/tekshirish.html')
 
 def get_dic_from_two_lists(keys, values):

@@ -48,12 +48,16 @@
                 {% endif %}
             </h4>
             {% endfor %}
-            <form action="{% url 'home' %}">
-                <button type="submit" class="btn btn-primary">Home</button>
-            </form>
-        </div>
-    </div>
 
+            <div class="col-ms-4">
+                <a href="{% url 'fan' category.id %}" class="btn btn-primary">Previous</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 <!--~~~~~~~~~~~~card.body~~~~~~~~~~~~-->
