@@ -41,14 +41,16 @@
         <div class="card card-body">
             {% for key, value in respon.items %}
             <h4>{{ key }}- savol javobi:
-               {% if value %}
+                {% if value %}
                 To'g'ri
                 {% else %}
                 Noto'g'ri
                 {% endif %}
             </h4>
             {% endfor %}
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <form action="{% url 'home' %}">
+                <button type="submit" class="btn btn-primary">Home</button>
+            </form>
         </div>
     </div>
 
