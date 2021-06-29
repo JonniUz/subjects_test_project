@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card card-body">
 
-                <form action="{% url 'tekshirish' %}" method="post">
+                <form action="{% url 'tekshirish' category.id %}" method="post">
                     {% csrf_token %}
                     {% if response %}
                     <h2>{{ response }}</h2>
@@ -42,4 +42,7 @@
 
 
 {% endblock content %}
+
+
+
 

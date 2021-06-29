@@ -12,7 +12,7 @@ class Category(models.Model):
         return self.name
 class Question(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    text = models.CharField(max_length=255)
+    text = models.CharField(max_length=2550)
 
     class Meta:
         verbose_name_plural = 'Savollar'

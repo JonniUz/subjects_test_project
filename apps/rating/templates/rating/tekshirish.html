@@ -2,27 +2,60 @@
 
 {% block content %}
 
-<br>
 <div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="caed card-title">
-                <h3></h3>
+    <div class="col-sm-4">
+        <div class="card" style="background:lightblue;">
+            <div class="card card-header">
+                <center>
+                    <h3>Savollar soni:</h3>
+                    <h1>{{ len_questions }}</h1>
+                </center>
             </div>
-            <div class="card card-body">
-
-                <ul>
-                    {% for key, value in list.items %}
-                    <li>{{key}} - {{value}}</li>
-                    {% endfor %}
-                </ul>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" style="background:#ecff3e;">
+            <div class="card card-header">
+                <center>
+                    <h3>Belgilangan savollar soni:</h3>
+                    <h1>{{ len_javoblar }}</h1>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" style="background:greenyellow;">
+            <div class="card card-header">
+                <center>
+                    <p>To'g'ri javoblar soni:</p>
+                    <h1>{{ correct_answer_count }}</h1>
+                </center>
             </div>
         </div>
     </div>
 </div>
+<br>
+<br>
+<div class="card">
+    <div class="col-ms-4">
+        <div class="card card-body">
+            {% for key, value in respon.items %}
+            <h4>{{ key }}- savol javobi:
+               {% if value %}
+                To'g'ri
+                {% else %}
+                Noto'g'ri
+                {% endif %}
+            </h4>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 
 
+</div>
+<!--~~~~~~~~~~~~card.body~~~~~~~~~~~~-->
+
+<!--
 {% endblock content %}
 

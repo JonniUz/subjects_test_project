@@ -1,0 +1,47 @@
+[
+{"choice": "(−2; −1) ∪ (−1; 0)",
+"is_correct": 1,
+"question_id": 5,  
+},
+
+{"choice": "[0; 1]",
+"is_correct": 0,
+"question_id": 5,  
+},
+
+{"choice": "(-1; 0)",
+"is_correct": 0,
+"question_id": 5,  
+},
+
+
+{"choice": "[−1; 0]",
+"is_correct": 0,
+"question_id": 5,  
+},
+
+
+{"choice": "56",
+"is_correct": 0,
+"question_id": 6,  
+},
+
+
+{"choice": "44",
+"is_correct": 1,
+"question_id": 6,  
+},
+
+
+{"choice": "40",
+"is_correct": 0,
+"question_id": 6,  
+},
+
+
+{"choice": "48",
+"is_correct": 0,
+"question_id": 6,  
+}
+
+]
