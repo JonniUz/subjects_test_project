@@ -1,0 +1,11 @@
+{% extends 'rating/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="{% url 'edit_question' category.id question.id %}" method="post">
+
+    {% csrf_token %}
+    {{ ques_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}
+

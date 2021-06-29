@@ -1,0 +1,12 @@
+{% extends 'rating/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="{% url 'add_new' %}" method="post">
+    {% csrf_token %}
+
+    {{ ques_form.as_p }}
+    {{ choice_form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock content %}
+

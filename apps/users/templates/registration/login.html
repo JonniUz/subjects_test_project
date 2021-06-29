@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="login-box">
+        <div class="input-section">
+            <i class="far fa-user"></i>
+            {{ form.username }}
+        </div>
+        <div class="input-section">
+            <i class="fas fa-lock"></i>
+            {{ form.password }}
+
+<!--            <input class="input-area" type="password" placeholder="Password">-->
+        </div>
+        <button class="btn" id="login-btn">Login</button>
+        <div class="question-box">
+            <p class="question">Not a memeber?</p><a class="reg-btn" href="{% url 'signup' %}">Register</a>
+        </div>
+    </div>
+</form>
+
+<div class="success-box">
+    <h1>You have been logged in!</h1>
+</div>
+
+{% endblock %}
