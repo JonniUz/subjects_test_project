@@ -7,33 +7,22 @@
     <div class="col">
         <div class="card">
             <div class="card card-body">
-
                 <form action="{% url 'tekshirish' category.id %}" method="post">
                     {% csrf_token %}
                     {% if response %}
                     <h2>{{ response }}</h2>
                     {% endif %}
                     {% for question in questions %}
-
                     <label>{{forloop.counter}}. {{ question.text }}</label>
-
                     <div class="form-group">
                         {% for choice in question.choice_set.all %}
-
                         <input type="radio" value="{{choice}}" id="{{forloop.counter}}" name="{{question.id}}">
                         <label for="{{forloop.counter}}">{{choice}}</label><br>
-
-
-
-                        <!--        <input type="checkbox"  value="{{ choice }}">-->
-
                         {% endfor %}
                         <hr>
                     </div>
-
                     {% endfor %}
                     <button type="submit" class="btn btn-primary">Submit</button>
-
                 </form>
             </div>
         </div>

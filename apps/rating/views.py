@@ -1,8 +1,6 @@
-from logging import exception
-
 from django.shortcuts import render, redirect
 from .models import Category, Choice, Question
-from django.http import HttpResponse
+
 
 def home(request):
     categories = Category.objects.all()
@@ -12,7 +10,8 @@ def home(request):
 def fan(request, id):
     fan = Category.objects.get(id=id)
     questions = fan.question_set.all()
-    return render(request, 'rating/fan.html', {'questions': questions,'category': fan} )
+    return render(request, 'rating/fan.html', {'questions': questions, 'category': fan})
+
 
 def tekshirish(request, id):
     tartib = []
@@ -53,25 +52,6 @@ def tekshirish(request, id):
                                                           'category': fan})
     return render(request, 'rating/tekshirish.html')
 
+
 def get_dic_from_two_lists(keys, values):
-    return { keys[i] : values[i] for i in range(len(keys)) }
-
-
-#             print(f'Response= {response}')
-#             if not response == None:
-#                 for choice in choices:
-#
-#                     if str(choice) == response and choice.is_correct:
-#                         if False not in responses:
-#                             counter += 1
-#                             responses.append(counter)
-#                             responses.append(True)
-#
-#                     else:
-#                         if False not in responses:
-#                             counter += 1
-#                             responses.append(counter)
-#                             responses.append(False)
-#
-#
-#         # responses.pop()
+    return {keys[i]: values[i] for i in range(len(keys))}
