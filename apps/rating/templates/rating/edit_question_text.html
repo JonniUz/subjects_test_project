@@ -1,11 +1,15 @@
 {% extends 'rating/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form action="{% url 'edit_question_text' category.id question.id choice.id %}" method="post">
+<div class="card card-body">
+    <form action="{% url 'edit_question_text' category.id question.id choice.id %}" method="post">
 
-    {% csrf_token %}
-    {{ choice_form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+        {% csrf_token %}
+        {{ choice_form.as_p }}
+        <a href="{% url 'fan' category.id %}" class="btn btn-info">Previous</a>
+        <button type="submit" class="btn btn-primary">Confirm Edition</button>
+        <a href="{% url 'delete_question_text' category.id question.id choice.id %}" class="btn btn-danger">Delete</a>
+    </form>
+</div>
 {% endblock content %}
 

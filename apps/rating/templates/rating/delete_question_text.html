@@ -1,0 +1,13 @@
+{% extends 'rating/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card card-body">
+    <form action="{% url 'delete_question_text' category.id question.id choice.id %}" method="post">
+        <p>Are you sure to want to delete "{{ choice }}"?</p>
+        {% csrf_token %}
+        <a href="{% url 'edit_question_text' category.id question.id choice.id %}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{% endblock content %}
+

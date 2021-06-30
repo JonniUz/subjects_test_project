@@ -1,7 +1,7 @@
 {% extends 'rating/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form action="{% url 'add_new_choice' %}" method="post">
+    <form action="{% url 'add_new_choice' category.id question.id %}" method="post">
 
     {% csrf_token %}
     {{ choice_form.as_p }}

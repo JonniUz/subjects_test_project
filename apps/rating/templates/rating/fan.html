@@ -3,7 +3,14 @@
 {% block content %}
 
 <br>
-<center><h2>{{ category.name }} fanidan testlar </h2></center>
+<center>
+    <h2>{{ category.name }} fanidan testlar <br>
+        {% if request.user.is_authenticated %}
+            <a class="btn btn-sm btn-outline-info" href="{% url 'add_new_question' category.id %}">Add new tests</a>
+            <a class="btn btn-sm btn-outline-danger" href="{% url 'delete_category' category.id %}">Remove The Category</a>
+        {% endif %}
+    </h2>
+</center>
 <div class="row">
     <div class="col">
         <div class="card">
@@ -18,6 +25,8 @@
 
                         {% if request.user.is_authenticated %}
                         <a href="{% url 'edit_question' category.id question.id %}" class="btn btn-sm btn-outline-info">Edit</a>
+                        <a href="{% url 'add_new_choice' category.id question.id %}"
+                           class="btn btn-sm btn-outline-info">Add new Choice</a>
                         {% endif %}
 
 
@@ -26,7 +35,11 @@
                         {% for choice in question.choice_set.all %}
                         <input type="radio" value="{{choice}}" id="{{forloop.counter}}" name="{{question.id}}">
                         <label for="{{forloop.counter}}">{{choice}}</label>
-                        <a href="{% url 'edit_question_text' category.id question.id choice.id %}" class="btn btn-sm btn-outline-info">Edit</a>
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'edit_question_text' category.id question.id choice.id %}"
+                           class="btn btn-sm btn-outline-info">Edit</a>
+                        {% endif %}
+
                         <br>
                         {% endfor %}
                         <hr>
